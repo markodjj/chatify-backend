@@ -13,6 +13,8 @@ dontenv.config();
 
 const { NODE_ENV, PORT } = process.env;
 
+console.log(NODE_ENV);
+
 const FRONTEND_URL = process.env.VITE_API_URL;
 console.log("origin front ul = ", FRONTEND_URL);
 app.use(express.json());
@@ -34,6 +36,7 @@ if (NODE_ENV === "development") {
   });
 } else if (NODE_ENV === "production") {
   // For production, Vercel expects an exported server (or app)
+  console.log("zsata");
   connectDB();
 }
 
