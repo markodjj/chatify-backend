@@ -29,15 +29,15 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if (NODE_ENV === "development") {
-  server.listen(PORT, () => {
-    console.log("Server is running on port: " + PORT);
-    connectDB();
-  });
-} else if (NODE_ENV === "production") {
-  // For production, Vercel expects an exported server (or app)
-  console.log("zsata");
-  connectDB();
-}
-
+// if (NODE_ENV === "development") {
+//   server.listen(PORT, () => {
+//     console.log("Server is running on port: " + PORT);
+//     connectDB();
+//   });
+// } else if (NODE_ENV === "production") {
+//   // For production, Vercel expects an exported server (or app)
+//   console.log("zsata");
+//   connectDB();
+// }
+connectDB();
 export default server;
