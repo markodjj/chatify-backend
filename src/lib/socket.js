@@ -2,6 +2,7 @@ import { Server } from "socket.io";
 import http from "http";
 import express from "express";
 import dotenv from "dotenv"; // Add this
+import cors from "cors";
 
 dotenv.config(); // Load .env variables
 
@@ -10,6 +11,8 @@ const server = http.createServer(app);
 
 const FRONTEND_URL = process.env.VITE_API_URL;
 console.log("socket, frontendurl = ", FRONTEND_URL);
+
+app.use(cors({ origin: FRONTEND_URL }));
 const io = new Server(server, {
   cors: {
     origin: [FRONTEND_URL],
