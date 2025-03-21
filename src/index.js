@@ -14,7 +14,7 @@ dontenv.config();
 const { NODE_ENV, PORT } = process.env;
 
 const FRONTEND_URL = process.env.VITE_API_URL;
-console.log(FRONTEND_URL);
+console.log("origin front ul = ", FRONTEND_URL);
 app.use(express.json());
 app.use(cookieParser());
 app.use(

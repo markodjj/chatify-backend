@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 
 const FRONTEND_URL = process.env.VITE_API_URL;
-console.log(FRONTEND_URL);
+console.log("socket, frontendurl = ", FRONTEND_URL);
 const io = new Server(server, {
   cors: {
     origin: [FRONTEND_URL],
