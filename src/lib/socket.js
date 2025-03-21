@@ -13,6 +13,7 @@ console.log("socket, frontendurl = ", FRONTEND_URL);
 const io = new Server(server, {
   cors: {
     origin: [FRONTEND_URL],
+    credentials: true,
   },
 });
 
