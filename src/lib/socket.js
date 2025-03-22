@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 
 const io = new Server(server, {
   cors: {
-    origin: [FRONTEND_URL],
+    origin: ["*"],
     credentials: true,
   },
 });

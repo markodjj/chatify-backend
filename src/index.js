@@ -19,7 +19,7 @@ const FRONTEND_URL = process.env.VITE_API_URL;
 console.log("origin front ul = ", FRONTEND_URL);
 
 const corsOptions = {
-  origin: FRONTEND_URL,
+  origin: ["*"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 };
