@@ -12,7 +12,14 @@ const server = http.createServer(app);
 const FRONTEND_URL = process.env.VITE_API_URL;
 console.log("socket, frontendurl = ", FRONTEND_URL);
 
-app.use(cors({ origin: FRONTEND_URL }));
+const corsOptions = {
+  origin: FRONTEND_URL,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+};
+
+app.use(cors(corsOptions));
+
 const io = new Server(server, {
   cors: {
     origin: [FRONTEND_URL],
