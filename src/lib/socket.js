@@ -22,8 +22,7 @@ app.use(cors(corsOptions));
 
 const io = new Server(server, {
   cors: {
-    origin: ["*"],
-    credentials: true,
+    origin: ["http://localhost:5173"],
   },
 });
 
