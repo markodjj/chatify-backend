@@ -21,9 +21,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 const io = new Server(server, {
-  cors: {
-    origin: ["http://localhost:5173"],
-  },
+  cors: corsOptions,
 });
 
 export function getReceiverSocketId(userId) {
