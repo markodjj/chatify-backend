@@ -18,9 +18,6 @@ console.log(NODE_ENV);
 const FRONTEND_URL = process.env.VITE_API_URL;
 console.log("origin front ul = ", FRONTEND_URL);
 
-app.use(express.json());
-app.use(cookieParser());
-
 const corsOptions = {
   origin: FRONTEND_URL,
   credentials: true,
@@ -28,6 +25,8 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
